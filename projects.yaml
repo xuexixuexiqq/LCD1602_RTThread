@@ -1,0 +1,5 @@
+projects:
+  LCD1602:
+  - project.yaml
+settings:
+  export_dir: .

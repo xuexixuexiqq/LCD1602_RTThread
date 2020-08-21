@@ -7,7 +7,7 @@ LCD1602 | STM32
 :------ | -----:
 RW	    |  PB1
 EN	    |  PB0
-RS	    |  PD2
+RS	    |  PB2
 D4	    |  PC6
 D5	    |  PC7
 D6	    |  PC8

@@ -1,6 +1,8 @@
 projects:
   LCD1602:
   - project.yaml
+  LCD1602-rtt:
+  - project_rtthread.yaml
 settings:
   export_dir:
   - generate_project

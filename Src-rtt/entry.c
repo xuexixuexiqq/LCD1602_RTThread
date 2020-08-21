@@ -26,6 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "entry.h"
 #include "LCD.h"
 /* USER CODE END Includes */
 

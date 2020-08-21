@@ -12,7 +12,7 @@ typedef struct {
   uint8_t DisplayMode;
   uint8_t currentX;
   uint8_t currentY;
-
+  
 } LCD_Options_t;
 //############################################################################################
 /* Private functions */
@@ -74,8 +74,8 @@ void  LCD_Delay_ms(uint8_t  ms)
 #if _LCD_USE_FREERTOS==1
   osDelay(ms);
 #else
-//  HAL_Delay(ms);
-	rt_thread_delay(ms);
+  //  HAL_Delay(ms);
+  rt_thread_delay(ms);
 #endif
 }
 //############################################################################################
@@ -85,7 +85,7 @@ void LCD_Init(void)
   gpio.Mode = GPIO_MODE_OUTPUT_PP;
   gpio.Speed = GPIO_SPEED_FREQ_HIGH;
   gpio.Pull = GPIO_NOPULL;
-
+  
   gpio.Pin = _LCD_RS_PIN;
   HAL_GPIO_Init(_LCD_RS_PORT,&gpio);
   gpio.Pin = _LCD_E_PIN;
@@ -100,7 +100,7 @@ void LCD_Init(void)
   HAL_GPIO_Init(_LCD_D6_PORT,&gpio);
   gpio.Pin = _LCD_D7_PIN;
   HAL_GPIO_Init(_LCD_D7_PORT,&gpio);
-
+  
   while(HAL_GetTick()<200)
     LCD_Delay_ms(1);
   /* Set cursor pointer to beginning for LCD */
@@ -213,7 +213,7 @@ void LCD_CreateChar(uint8_t location, uint8_t *data)
   /* We have 8 locations available for custom characters */
   location &= 0x07;
   LCD_Cmd(LCD_SETCGRAMADDR | (location << 3));
-
+  
   for (i = 0; i < 8; i++) {
     LCD_Data(data[i]);
   }

@@ -35,7 +35,7 @@ common:
   - Middlewares\Third_Party\FatFs\src
   sources:
     Drivers:
-    - Drivers\LCD1602_4W\Src\LCD.c
+    - Drivers\LCD1602_4W\Src\LCD-rtt.c
     - Drivers\STM32F1xx_HAL_Driver\Src
     RTThread:
     - Libraries\rt-thread\HAL_Drivers
